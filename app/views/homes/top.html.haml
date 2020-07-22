@@ -1,0 +1,42 @@
+%a{ :href => 'http://google.co.jp', :id => 'anchor1'}
+    {}でくくってその中に表現するのだ！！
+%p
+%a{ href: 'http://google.co.jp', id: 'anchor2'}
+    属性の指定は、こんな風にも書ける。(Rubyのhash指定の文法に依存)
+%p
+%a( href= 'http://google.co.jp' id= 'anchor3')
+    属性の間に、カンマをつけたくない人は、こんな風に()を使っても書ける
+%p
+%a(href= 'http://gooogle.co.jp'){id: 'anchor4'}
+    ただ、()の方は、スペース区切り故に出来ないこともあるので。両方書くことも許されている。
+%p
+%span#id_value.class_value1.class_value2
+    こんな感じで#でidを指定して,.でクラスを指定する。　.は複数設定可
+
+%div
+    こんな風にdivタグも書けるけど
+%p
+.xxx
+    こんな風に「.(ドット)」+文字列と書くとxxxというクラスを指定したdivタグが生成される
+%p
+#zzz
+    こんな風に「#(シャープ)」+ 文字列と書くとzzzというidを持ったdivタグが生成される
+%p
+
+-#分岐したい場合
+
+- 3.times do |i|
+    %p #{i}
+
+- 4.times do |i|
+    %span
+        - if i.odd?
+            odd!!
+        - else
+            even!!
+
+%p
+= link_to 'Go To Google', 'http://google.co.jp'
+%p
+- my_variable = '変数を使ってみる'
+= "こんな風に、#{my_variable}ことができます"
