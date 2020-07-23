@@ -7,7 +7,7 @@
 %a( href= 'http://google.co.jp' id= 'anchor3')
     属性の間に、カンマをつけたくない人は、こんな風に()を使っても書ける
 %p
-%a(href= 'http://gooogle.co.jp'){id: 'anchor4'}
+%a( href= 'http://gooogle.co.jp'){id: 'anchor4'}
     ただ、()の方は、スペース区切り故に出来ないこともあるので。両方書くことも許されている。
 %p
 %span#id_value.class_value1.class_value2
@@ -40,3 +40,12 @@
 %p
 - my_variable = '変数を使ってみる'
 = "こんな風に、#{my_variable}ことができます"
+
+.test
+    テスト練習practice
+
+= link_to "Go To Yahoo!", 'http://yahoo.co.jp'
+
+%p
+%a( href= 'http://yahoo.co.jp')
+    yahooにアクセス
